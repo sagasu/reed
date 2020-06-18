@@ -16,21 +16,21 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         
         <button onClick={incrementCount}>I was clicked {count} times</button>
-
-      </header>
 
       <>
         <h2>Toggle light</h2>
         <div>
           <img
+          src={
+            isOn ? 'https://icon.now.sh/highlight/fd0' : 'https://icon.now.sh/highlight/aaa' 
+          }
           style= {{
             height: "50px",
             width: "50px",
-            background: isOn ? "yellow" : "gray"
           }}
+          alt="Flashlight"
           onClick={toggleLight}
           />
         </div>
