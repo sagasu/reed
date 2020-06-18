@@ -4,7 +4,8 @@ import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
-  const [isOn, setIsOn] = useState(0);
+  const [isOn, setIsOn] = useState(false);
+  const [mousePosition, setMousePosition] = useState({x: null, y: null});
 
   const incrementCount = () => {
     setCount(prevCount => prevCount + 1);
@@ -16,8 +17,19 @@ function App() {
 
   useEffect(() => {
     document.title = `You have clicked ${count} times`;
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
   })
 
+  const handleMouseMove = (event) => {
+    setMousePosition({
+      x: event.pageX,
+      y: event.pageY
+    })
+  }
   return (
     <div className="App">
         
@@ -38,6 +50,10 @@ function App() {
           onClick={toggleLight}
           />
         </div>
+
+        <h2>Mouse position</h2>
+        {JSON.stringify(mousePosition, null, 2)}
+        <br/>
       </>
     </div>
   );
