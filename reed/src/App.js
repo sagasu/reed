@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,6 +13,10 @@ function App() {
   const toggleLight = () => {
     setIsOn(previous => !previous)
   }
+
+  useEffect(() => {
+    document.title = `You have clicked ${count} times`;
+  })
 
   return (
     <div className="App">
