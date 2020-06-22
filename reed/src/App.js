@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function App() {
     const [results, setResults] = useState([]);
-    const [query, setQuery] = useState('reacthooks'); 
+    const [query, setQuery] = useState('reacthooks');
 
     const getResults = async () => {
         const response = await axios.get(`http://hn.algolia.com/api/v1/search?query=${query}`);
@@ -13,12 +13,19 @@ export default function App() {
     };
 
     useEffect(() => {
+    }, []);
+
+    const handleSearch = event => {
+        event.preventDefault();
         getResults();
-    }, [query]);
+    };
 
     return (
         <>
-            <input type="test" onChange={event => setQuery(event.target.value)} value={query}></input>
+            <form onSubmit={handleSearch}>
+                <input type="text" onChange={event => setQuery(event.target.value)} value={query}></input>
+                <button type="submit" >Search</button>
+            </form>
             <ul>
                 {results.map(result => (
                     <li key={result.objectID}>
