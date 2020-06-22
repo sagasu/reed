@@ -1,3 +1,6 @@
+## Various scripts
+In index.js you can comment App.js import and uncomment Login, Register, AppPlayground imports to play with various functionalities.
+
 ## Available Scripts
 
 In the project directory, you can run:
