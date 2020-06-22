@@ -1,2 +1,2 @@
-# reed
-abusing react hooks 
+# Hacker News reader
+Abusing react hooks 
