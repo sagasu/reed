@@ -24,7 +24,7 @@ export default function App() {
         <>
             <form onSubmit={handleSearch}>
                 <input type="text" onChange={event => setQuery(event.target.value)} value={query}></input>
-                <button type="submit" >Search</button>
+                <button id="search-btn" type="submit" >Search</button>
             </form>
             <ul>
                 {results.map(result => (
