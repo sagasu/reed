@@ -19,4 +19,9 @@ describe("Elements testing", () => {
   test('render input with text', () => {
     expect(wrapper.find('#search-btn').text()).toBe('Search');
   });
+
+  test('my empty test', () => {
+    //also success
+  });
+  
 });
