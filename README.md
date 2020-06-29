@@ -1,2 +1,5 @@
 # Hacker News reader
-Abusing react hooks 
+Hacker news in react hooks 
+
+
+![alt text](https://github.com/sagasu/hacker-news-reader/blob/master/hacker-news.png?raw=true)
